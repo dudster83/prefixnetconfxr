@@ -1,0 +1,18 @@
+#Make adjustments where needed
+
+control-plane
+ management-plane
+  out-of-band
+   interface MgmtEth0/RSP0/CPU0/0
+    allow SSH
+    allow NETCONF
+   !
+  !
+ !
+!
+ssh server v2
+ssh server netconf port 830
+ssh server netconf vrf default
+netconf agent tty
+!
+netconf-yang agent ssh
